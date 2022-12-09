@@ -2,7 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--  위치권한 2가지 명세  -->
+    <!--  도시 블록 내에서의 정확한 위치(네트워크 위치)  -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!--  정확한 위치 확보(네트워크 + GPS위치)  -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!--  인터넷 권한 명세  -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+<!--  도서관 정보 API가 HTTPS(보안프로토콜)이 아닌
+        HTTP를 사용하기 때문에 uusesCleartextTraffic="true" 추가  -->
     <application
+
+        android:usesCleartextTraffic="true"
+
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -26,7 +40,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="${MAP_API_KEY}" />
 
         <activity
             android:name=".MapsActivity"

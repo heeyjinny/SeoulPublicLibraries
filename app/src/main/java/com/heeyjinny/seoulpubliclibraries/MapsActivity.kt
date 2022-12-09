@@ -11,6 +11,20 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.heeyjinny.seoulpubliclibraries.databinding.ActivityMapsBinding
 
+/**  서울 공공도서관 앱 개발하기  **/
+
+//1
+//구글 지도 API키 추가
+//레트로핏, JSON컨버터 라이브러리 추가
+//build.gradle(:app)
+
+//2
+//위치권한 및 인터넷권한 추가
+//AndroidManifest.xml
+
+//3
+
+
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
