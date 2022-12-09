@@ -55,7 +55,7 @@ interface SeoulOpenService{
     //메서드가 호출되는 순간 매핑할 이름이
     //정의된 파라미터의 값으로 대체된 후 사용됨
 
-    @GET("{api_kry}/json/SeoulPublicLibraryInfo/1/200/")
+    @GET("{api_key}/json/SeoulPublicLibraryInfo/1/200/")
     fun getLibrary(@Path("api_key") key: String): Call<Library>
 
 }
