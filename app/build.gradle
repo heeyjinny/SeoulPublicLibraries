@@ -15,6 +15,7 @@ android {
     defaultConfig {
 
         //타입 - 키(변수명) - 정의된 키
+        buildConfigField "String", "LBRRY_DOMAIN", properties ['LBRRY_DOMAIN']
         buildConfigField "String", "LBRRY_API_KEY", properties ['LBRRY_API_KEY']
         buildConfigField "String", "MAP_API_KEY", properties ['MAP_API_KEY']
 
