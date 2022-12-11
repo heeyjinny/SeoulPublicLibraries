@@ -1,5 +1,7 @@
 package com.heeyjinny.seoulpubliclibraries
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -77,6 +79,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         //loadLibraries()호출
         loadLibraries()
 
+        //9-2
+        //마커에 tag단 것을 이용해
+        //마커를 클릭했을 때 홈페이지 주소를 웹브라우저로 생성
+        mMap.setOnMarkerClickListener {
+
+            //9-3
+            //마커의 tag가 null값이 아니라면
+            if (it.tag != null){
+
+                //9-4
+                //마커의 tag를 String으로 형변환하고
+                //tag가 http로 시작하지 않으면
+                //http://문자열을 앞에 추가
+                var url = it.tag as String
+                if (!url.startsWith("http")){
+                    url = "http://${url}"
+                }
+                //9-5
+                //완성된 url을 intent로 생성한 후
+                //액티비티 호출
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+            }
+            true
+        }
+
     }//onMapReady
 
     //5
@@ -107,8 +135,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             //인터페이스의 코드 2개 자동 생성
             override fun onResponse(call: Call<Library>, response: Response<Library>) {
 
-                Toast.makeText(this@MapsActivity, "서버요청 성공", Toast.LENGTH_SHORT).show()
-
                 //5-5
                 //서버 요청이 정상적으로 되었다면
                 //지도에 마커를 표시하는 메서드 호출(마커 표시 메서드 아래에 생성필요...)
@@ -128,7 +154,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }//loadLibraries
 
     //6
-    //지도에 도서관 파커 표시하는 메서드생성
+    //지도에 도서관 마커 표시하는 메서드생성
     fun showLibraries(libraries: Library){
 
         //7
@@ -155,7 +181,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
             //6-4
             //마커를 지도에 추가
-            mMap.addMarker(marker)
+            //mMap.addMarker(marker)
+
+            //9
+            //도서관 이름 클릭 시 홈페이지로 이동하기
+            //도서관 홈페이지 URL검사 후
+            //홈페이지를 웹 프라우저에 띄우는 코드 작성
+            //9-1
+            //6-4코드 수정
+            //마커에 tag정보 추가
+            //지도에 마커를 추가하고 그 마커 tag값에 홈페이지 주소 저장
+            var obj = mMap.addMarker(marker)
+            obj?.tag = lib.HMPG_URL
 
             //7-1
             //지도에 마커 추가 후 latLngBounds에도 마커 추가
