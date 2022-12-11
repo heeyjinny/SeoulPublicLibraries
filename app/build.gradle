@@ -9,7 +9,7 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 android {
-    namespace 'com.heeyjinny.seoulpubliclibraries'
+    namespace 'com.heeyjinny.googlemapclustering'
     compileSdk 32
 
     defaultConfig {
@@ -19,7 +19,7 @@ android {
         buildConfigField "String", "LBRRY_API_KEY", properties ['LBRRY_API_KEY']
         buildConfigField "String", "MAP_API_KEY", properties ['MAP_API_KEY']
 
-        applicationId "com.heeyjinny.seoulpubliclibraries"
+        applicationId "com.heeyjinny.googlemapclustering"
         minSdk 23
         targetSdk 32
         versionCode 1

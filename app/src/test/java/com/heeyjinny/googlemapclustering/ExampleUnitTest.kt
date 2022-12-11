@@ -1,4 +1,4 @@
-package com.heeyjinny.seoulpubliclibraries
+package com.heeyjinny.googlemapclustering
 
 import org.junit.Test
 

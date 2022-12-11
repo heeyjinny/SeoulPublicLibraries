@@ -1,4 +1,4 @@
-package com.heeyjinny.seoulpubliclibraries.data
+package com.heeyjinny.googlemapclustering.data
 
 data class Library(
     val SeoulPublicLibraryInfo: SeoulPublicLibraryInfo

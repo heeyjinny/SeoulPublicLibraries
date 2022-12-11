@@ -1,4 +1,4 @@
-package com.heeyjinny.seoulpubliclibraries
+package com.heeyjinny.googlemapclustering
 
 import android.content.Intent
 import android.net.Uri
@@ -13,8 +13,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
-import com.heeyjinny.seoulpubliclibraries.data.Library
-import com.heeyjinny.seoulpubliclibraries.databinding.ActivityMapsBinding
+import com.heeyjinny.googlemapclustering.data.Library
+import com.heeyjinny.googlemapclustering.databinding.ActivityMapsBinding
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 

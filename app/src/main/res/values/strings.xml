@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">SeoulPublicLibraries</string>
+    <string name="app_name">GoogleMapClustering</string>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>

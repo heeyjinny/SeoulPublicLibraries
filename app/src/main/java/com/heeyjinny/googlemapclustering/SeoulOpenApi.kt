@@ -1,6 +1,6 @@
-package com.heeyjinny.seoulpubliclibraries
+package com.heeyjinny.googlemapclustering
 
-import com.heeyjinny.seoulpubliclibraries.data.Library
+import com.heeyjinny.googlemapclustering.data.Library
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
