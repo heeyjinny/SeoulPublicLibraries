@@ -45,6 +45,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 //기본정보를 담아두는 클래스와
 //클래스 안에 레트로핏에서 사용할 인터페이스 생성
 
+
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
