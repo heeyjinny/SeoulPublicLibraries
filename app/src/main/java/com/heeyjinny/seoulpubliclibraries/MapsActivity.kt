@@ -181,7 +181,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
             //6-4
             //마커를 지도에 추가
-            //mMap.addMarker(marker)
+            mMap.addMarker(marker)
 
             //9
             //도서관 이름 클릭 시 홈페이지로 이동하기
